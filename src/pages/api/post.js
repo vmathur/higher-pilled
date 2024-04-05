@@ -9,8 +9,9 @@ export default async function handler (req,res){
   }
   let fid = req.body.untrustedData.castId.fid;
   let balance = await getHigherBalance(fid)
-  let balanceView = (balance/1000000000000000000).toString()
-  let response = {message:balanceView}
+  let formattedBalance = Math.floor(balance/1000000000000000000).toLocaleString();
+  let balanceView = formattedBalance + ' tokens';
+  let response = {message: balanceView};
 
   return res.status(200).setHeader('Content-Type', 'text/html').send(response)
 }
