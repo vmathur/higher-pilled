@@ -7,7 +7,7 @@ export default async function handler (req,res){
       return
     }
 
-    let name = 'Higher Pilled'
+    let name = 'Higher pilled'
     let postUrl = BASE_URL+'/api/post'
     let icon='search';
     let installUrl= `https://warpcast.com/~/add-cast-action?actionType=post&name=${name}&icon=${icon}&postUrl=${postUrl}`
